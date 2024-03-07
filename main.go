@@ -10,6 +10,10 @@ func main() {
 	r := gin.Default()
 	r.Use(cors.Default())
 
+	r.GET("", func(c *gin.Context) {
+		c.JSON(200, gin.H{"message": "Welcome to Gor API"})
+	})
+
 	r.POST("/gorRunner", func(c *gin.Context) {
 		// Define a struct to hold the JSON body
 
